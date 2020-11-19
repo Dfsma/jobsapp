@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_004932) do
+ActiveRecord::Schema.define(version: 2020_11_19_004632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,7 +99,6 @@ ActiveRecord::Schema.define(version: 2020_11_19_004932) do
     t.string "link_to_apply"
     t.string "company_name"
     t.string "company_website"
-    t.string "role_type"
     t.string "compensation_range"
     t.string "compensation_type"
     t.string "estimated_hours"
@@ -138,11 +137,9 @@ ActiveRecord::Schema.define(version: 2020_11_19_004932) do
     t.boolean "moderator"
     t.boolean "developer", default: false
     t.boolean "employer", default: false
-    t.string "slug"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
