@@ -30,6 +30,17 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
     </div>
 
+    <h3 class="text-lg font-bold mb-4">Roles</h3>
+    <div class="input-group">
+      <%= f.label :developer, "Use railsdevs.com as a developer?" %>
+      <%= f.check_box :developer %>
+    </div>
+
+    <div class="input-group">
+      <%= f.label :employer, "Use railsdevs.com as an employer?" %>
+      <%= f.check_box :employer %>
+    </div>
+    
     <div class="input-group">
       <%= f.submit "Sign up", class: "btn btn-default" %>
     </div>
