@@ -1,3 +1,6 @@
+
+<div class="p-10 bg-white border rounded">
+
 <%= form_with(model: job, local: true) do |form| %>
   <% if job.errors.any? %>
     <div id="error_explanation">
@@ -12,61 +15,72 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: 'label' %>
+    <%= form.text_field :title, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :link_to_apply %>
-    <%= form.text_field :link_to_apply %>
+  <div class="input-group">
+    <%= form.label :link_to_apply, class: 'label' %>
+    <%= form.text_field :link_to_apply, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.rich_text_area :description %>
+  <div class="input-group">
+    <%= form.label :description, class: 'label' %>
+    <%= form.rich_text_area :description, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :company_name %>
-    <%= form.text_field :company_name %>
+  <div class='grid grid-cols-1 gap-6 lg:grid-cols-2 input-group'>
+    <div class="lg:col-span-1">
+      <%= form.label :company_name, class: 'label' %>
+      <%= form.text_field :company_name, class: 'input' %>
+    </div>
+
+    <div class="lg:col-span-1">
+      <%= form.label :company_website, class: 'label' %>
+      <%= form.text_field :company_website, class: 'input' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :company_website %>
-    <%= form.text_field :company_website %>
+  <div class="input-group">
+    <%= form.label :company_description, class: 'label' %>
+    <%= form.rich_text_area :company_description, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :company_description %>
-    <%= form.rich_text_area :company_description %>
+  <div class="input-group">
+    <%= form.label :compensation_type, class: 'label' %>
+    <%= form.text_field :compensation_type, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :role_type %>
-    <%= form.text_field :role_type %>
+  <div class="input-group">
+    <%= form.label :compensation_range, class: 'label' %>
+    <%= form.text_field :compensation_range, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :compensation_range %>
-    <%= form.text_field :compensation_range %>
+  <div class="input-group">
+    <%= form.label :estimated_hours, class: 'label' %>
+    <%= form.text_field :estimated_hours, class: 'input' %>
+  </div>
+  
+  <div class="input-group">
+    <%= form.label :headquarters, class: 'label' %>
+    <%= form.text_field :headquarters, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :remote %>
+  <div class="input-group input-checkbox">
     <%= form.check_box :remote %>
+    <%= form.label :remote, class: 'label' %>
   </div>
 
-  <div class="field">
-    <%= form.label :years_of_experience %>
-    <%= form.text_field :years_of_experience %>
+  <div class="input-group">
+    <%= form.label :years_of_experience, class: 'label' %>
+    <%= form.text_field :years_of_experience, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+ 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="input-group">
+    <%= form.submit class: 'btn btn-green' %>
   </div>
 <% end %>
+
+</div>
