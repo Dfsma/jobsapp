@@ -46,9 +46,13 @@
     <%= form.rich_text_area :company_description, class: 'input' %>
   </div>
 
-  <div class="input-group">
+  <div class="input-group relative">
     <%= form.label :compensation_type, class: 'label' %>
-    <%= form.text_field :compensation_type, class: 'input' %>
+    <div class="relative">
+      <%= form.select :compensation_type, options_for_select(Job::COMPENSATION_TYPE), {prompy: "Select One"} ,{class: 'select'} %>
+      <%= select_arrow %>
+    </div>
+    
   </div>
 
   <div class="input-group">

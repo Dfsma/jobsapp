@@ -13,5 +13,9 @@ module ApplicationHelper
     def author_of(resource)
         user_signed_in? && current_user.id = resource.user_id
     end
+
+    def select_arrow
+        render partial: "shared/select_arrow.html.erb"
+    end
     
 end
