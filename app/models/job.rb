@@ -50,7 +50,7 @@ class Job < ApplicationRecord
   scope :published, -> { where(status: JOB_STATUSES[:published]) }
   scope :archived, -> { where(status: JOB_STATUSES[:archived]) }
   # Constants
-  COMPENSATION_TYPE = [
+  COMPENSATION_TYPES = [
     "Contract",
     "Full-time"
   ]
