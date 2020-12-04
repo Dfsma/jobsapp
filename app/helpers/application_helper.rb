@@ -7,7 +7,7 @@ module ApplicationHelper
     end
 
     def admin?
-        user_signed_in? && current.user.admin?
+        user_signed_in? && current_user.admin?
     end
 
     def author_of(resource)
