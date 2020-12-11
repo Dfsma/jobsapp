@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+
   # GET /jobs
   # GET /jobs.json
   def index
@@ -25,7 +26,7 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
-    @job.user = current_user 
+    @job.user = current_user
 
     respond_to do |format|
       if @job.save
@@ -70,7 +71,23 @@ class JobsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_params
-      params.require(:job).permit(:company_name, :company_website, :company_description, :compensation_range, :description, :compensation_type,  
-        :estimated_hours, :headquarters, :link_to_apply, :price, :remote, :role_type, :title, :upsell_type, :years_of_experience)
+      params.require(:job).permit(
+        :company_logo,
+        :company_name,
+        :company_website,
+        :company_description,
+        :compensation_range,
+        :compensation_type,
+        :description,
+        :estimated_hours,
+        :headquarters,
+        :link_to_apply,
+        :price,
+        :remote,
+        :role_type,
+        :title,
+        :upsell_type,
+        :years_of_experience,
+      )
     end
 end
