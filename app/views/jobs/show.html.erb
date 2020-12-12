@@ -2,8 +2,8 @@
 
   <div class="flex flex-wrap items-center justify-between border-b lg:border-0">
     <%= link_to root_path, class: "mb-4 inline-flex items-center justify-start group" do %>
-      <%= render_svg "icons/chevron-left", styles: "fill-current w-5 h-5 text-red-600 group-hover:text-red-700" %>
-      <p class="text-sm text-red-600 group-hover:text-red-700">Back to all jobs</p>
+      <%= render_svg "icons/chevron-left", styles: "fill-current w-5 h-5 text-red-600 group-hover:text-purple-700" %>
+      <p class="text-sm text-red-600 group-hover:text-purple-700">Back to all jobs</p>
     <% end %>
   </div>
 
@@ -12,7 +12,6 @@
       <%= link_to @job.company_name, @job.company_website, class: "text-base text-gray-600 hover:text-teal-500" %>
 
       <h1 class="mb-2 text-3xl font-black leading-tight lg:text-4xl"><%= @job.title %></h1>
-
       <p class="pb-3 mb-3 leading-tight text-gray-700">
         <%= @job.compensation_type %> <span class="px-px text-gray-600">&bull;</span>
         <% if @job.compensation_type.downcase == "contract" %>
@@ -62,5 +61,3 @@
 </div>
 </div>
 </div>
-
-MINUTO 16:44
