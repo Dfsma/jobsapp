@@ -49,7 +49,6 @@ employer.save!
 
 
 Job.create!([{
-  id: 1,
   company_name: "Google",
   company_website: "https://google.com",
   compensation_range: "60,000 - 70,000",
@@ -73,7 +72,6 @@ Job.create!([{
 
 },
 {
-    id: 2,
     company_name: "DropBox",
     company_website: "https://dropbox.com",
     compensation_range: nil,
@@ -96,7 +94,6 @@ Job.create!([{
     company_description: Faker::Hipster.paragraph
 },
 {
-    id: 3,
     company_name: "Apple",
     company_website: "https://apple.com",
     compensation_range: "170,000 - 180,000",
