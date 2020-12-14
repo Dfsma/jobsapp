@@ -10,7 +10,6 @@ require("channels")
 require("trix")
 require("@rails/actiontext")
 
-
 import "controllers"
-import "src/job_form"
 import "stylesheets/application"
+import "src/job_form";

@@ -1,6 +1,6 @@
 
-
-let store = {
+import Vue from "vue/dist/vue.esm";
+export const store = Vue.observable({
   form: {
     step: 1,
     job: {
@@ -22,8 +22,24 @@ let store = {
       upsell_type: "No, thanks"
     }
   }
-}
+})
 
-export default {
-  store
-}
+export const actions = {
+  updateForm(input, value) {
+    store.form.job[input] = value;
+
+    let storedForm = this.openStorage();
+    if (!storedForm) storedForm = {};
+
+    storedForm[input] = value;
+    this.saveStorage(storedForm);
+  },
+
+  openStorage() {
+    return JSON.parse(localStorage.getItem('form'));
+  },
+
+  saveStorage(form) {
+    localStorage.setItem("form", JSON.stringify(form));
+  },
+};
